@@ -1,11 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import MapView from 'react-native-maps';
 import logo from './assets/logo.png';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <MapView
+        style={StyleSheet.absoluteFillObject}
+        provider={MapView.PROVIDER_GOOGLE}>
+      </MapView>
       <Image source={{ uri: "https://i.imgur.com/TkIrScD.png" }} style={styles.logo} />
 
       <Text style={styles.instructions}>
