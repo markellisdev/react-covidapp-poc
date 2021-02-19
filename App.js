@@ -7,16 +7,25 @@ import logo from './assets/logo.png';
 export default function App() {
   return (
     <View style={styles.container}>
+      {/* Add Google map in background for now */}
       <MapView
         style={StyleSheet.absoluteFillObject}
-        provider={MapView.PROVIDER_GOOGLE}>
+        provider={MapView.PROVIDER_GOOGLE}
+        // Set San Antonio as initialRegion
+        initialRegion={{
+          latitude: 29.42934083341083,
+          longitude: -98.48763303426837,
+          latitudeDelta: 0.922,
+          longitudeDelta: 0.421,
+        }}>
       </MapView>
+      {/* Add an image */}
       <Image source={{ uri: "https://i.imgur.com/TkIrScD.png" }} style={styles.logo} />
-
+      {/* Text instructions for user */}
       <Text style={styles.instructions}>
         To share a photo from your phone with a friend, just press the button below!
       </Text>
-
+      {/* Add button */}
       <TouchableOpacity onPress={() => alert('Hello World!')} style={styles.button}>
         <Text style={styles.buttonText}>Pick a photo</Text>
       </TouchableOpacity>
