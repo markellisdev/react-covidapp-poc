@@ -1,15 +1,19 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, View, SafeAreaView, Text} from 'react-native';
 
-function Header(props) {
+const Header = (props) => {
     return (
         <View
             style={styles.header}
         >
-            <Text style={styles.headerText}>Hey Irys</Text>
+            <Text style={styles.headerText}>{props.title}</Text>
         </View>
     );
 }
+
+Header.defaultProps = {
+    title: 'Hey Irys',
+};
 
 const styles = StyleSheet.create({
     header: {

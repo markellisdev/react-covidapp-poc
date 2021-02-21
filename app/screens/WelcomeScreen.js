@@ -2,7 +2,7 @@ import React from 'react';
 import { ImageBackground, StyleSheet, View, SafeAreaView} from 'react-native';
 import Header from '../components/Header';
 
-function WelcomeScreen(props) {
+const WelcomeScreen = (props) => {
     return (
         <ImageBackground
             style={styles.background}
