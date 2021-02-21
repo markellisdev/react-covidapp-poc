@@ -1,37 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View, SafeAreaView} from 'react-native';
 import MapView from 'react-native-maps';
-import logo from './assets/logo.png';
+import logo from './app/assets/logo.png';
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      {/* Add Google map in background for now */}
-      <MapView
-        style={StyleSheet.absoluteFillObject}
-        provider={MapView.PROVIDER_GOOGLE}
-        // Set San Antonio as initialRegion
-        initialRegion={{
-          latitude: 29.42934083341083,
-          longitude: -98.48763303426837,
-          latitudeDelta: 0.922,
-          longitudeDelta: 0.421,
-        }}>
-      </MapView>
-      {/* Add an image */}
-      <Image source={{ uri: "https://i.imgur.com/TkIrScD.png" }} style={styles.logo} />
-      {/* Text instructions for user */}
-      <Text style={styles.instructions}>
-        To share a photo from your phone with a friend, just press the button below!
-      </Text>
-      {/* Add button */}
-      <TouchableOpacity onPress={() => alert('Hello World!')} style={styles.button}>
-        <Text style={styles.buttonText}>Pick a photo</Text>
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <WelcomeScreen />
+  // return (
+  //   <SafeAreaView style={styles.container}>
+  //     {/* Add Google map in background for now */}
+  //     <MapView
+  //       style={StyleSheet.absoluteFillObject}
+  //       provider={MapView.PROVIDER_GOOGLE}
+  //       // Set San Antonio as initialRegion
+  //       initialRegion={{
+  //         latitude: 29.42934083341083,
+  //         longitude: -98.48763303426837,
+  //         latitudeDelta: 0.922,
+  //         longitudeDelta: 0.421,
+  //       }}>
+  //     </MapView>
+  //     {/* Add an image */}
+  //     <Image source={{ uri: "https://i.imgur.com/TkIrScD.png" }} style={styles.logo} />
+  //     {/* Text instructions for user */}
+  //     <Text style={styles.instructions}>
+  //       To share a photo from your phone with a friend, just press the button below!
+  //     </Text>
+  //     {/* Add button */}
+  //     <TouchableOpacity onPress={() => alert('Hello World!')} style={styles.button}>
+  //       <Text style={styles.buttonText}>Pick a photo</Text>
+  //     </TouchableOpacity>
+  //     <StatusBar style="auto" />
+  //   </SafeAreaView>
+  // );
 }
 
 const styles = StyleSheet.create({
