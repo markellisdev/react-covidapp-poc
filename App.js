@@ -1,11 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View, SafeAreaView} from 'react-native';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import MapView from 'react-native-maps';
 import logo from './app/assets/logo.png';
+
+// Screens Imported
 import WelcomeScreen from './app/screens/WelcomeScreen';
+import CategoryScreen from './app/screens/CategoryScreen';
+import DescriptionScreen from './app/screens/DescriptionScreen';
+import MapScreen from './app/screens/MapScreen';
+import SubCategoryScreen from './app/screens/SubCategoryScreen';
+
+
+const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
+  const [items, setItems] = useState([]);
   return <WelcomeScreen />
   // return (
   //   <SafeAreaView style={styles.container}>

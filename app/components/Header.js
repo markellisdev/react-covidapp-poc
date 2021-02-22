@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 70,
         padding: 15,
-        backgroundColor: '#E1DEF9',
+        backgroundColor: 'red',
         justifyContent: 'center',
     },
     headerText: {

@@ -1,10 +1,8 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, SafeAreaView, Button} from 'react-native';
+import { ImageBackground, StyleSheet, View, SafeAreaView} from 'react-native';
 import Header from '../components/Header';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
 
-const WelcomeScreen = (props, navigation) => {
+const WelcomeScreen = (props) => {
     return (
         <ImageBackground
             style={styles.background}
@@ -13,10 +11,6 @@ const WelcomeScreen = (props, navigation) => {
             <View>
                 <Header />
             </View>
-            <Button
-                onPress={() => navigation.navigate('Notifications')}
-                title="Go to navigations"
-            />
         </ImageBackground>
     );
 }
